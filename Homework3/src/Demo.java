@@ -55,7 +55,7 @@ public class Demo {
         System.out.println(personList);
 
         index = 2;
-        System.out.println("-----\nAdd to index " + 2);
+        System.out.println("-----\nAdd to index " + index);
         personList.add(index, new Person("person2-new"));
         System.out.println(personList);
 

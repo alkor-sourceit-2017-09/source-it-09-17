@@ -3,7 +3,7 @@ package demo;
 import domain.Product;
 import domain.SearchDemonstration;
 import exception.CustomException;
-import impl.OracleImpl;
+import impl.ConnectionImpl;
 import utils.Helper;
 
 import java.text.MessageFormat;
@@ -11,13 +11,13 @@ import java.text.MessageFormat;
 public class Demo {
     public static void main(String[] args) {
         try {
-            new OracleImpl().addProducts(new Product());
+            new ConnectionImpl().addProducts(new Product());
         } catch (RuntimeException e) {
             System.out.println("1st exception: " + e.getMessage());
         }
 
         try {
-            new OracleImpl().getAllProducts();
+            new ConnectionImpl().getAllProducts();
         } catch (RuntimeException e) {
             System.out.println("2nd exception: " + e.getMessage());
         }

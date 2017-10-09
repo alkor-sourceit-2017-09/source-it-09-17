@@ -37,7 +37,7 @@ public class ListChecker {
     private void removeFields() {
         int startIndex = INITIAL_SIZE / 2;
         int endIndex = startIndex + 1000;
-        for (int i = startIndex; i < endIndex; i++) {
+        for (int i = endIndex; i > startIndex; i--) {
             list.remove(i);
         }
     }

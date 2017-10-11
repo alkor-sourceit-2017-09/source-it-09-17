@@ -2,7 +2,10 @@ package impl;
 
 import interfaces.Smartable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class SmartableImpl implements Smartable {
 	@Override
@@ -19,9 +22,13 @@ public class SmartableImpl implements Smartable {
 			throw new IllegalArgumentException("Maps can't be null");
 		}
 		Map<String, Integer> result = new HashMap<>();
-		for (String key: map1.keySet()) {
-			if (map2.containsKey(key) && map1.get(key).equals(map2.get(key))) {
-				result.put(key, map1.get(key));
+		for (String key : map1.keySet()) {
+			if (map2.containsKey(key)) {
+				boolean shouldAdd = map1.get(key) == null ? map2.get(key) == null
+					: map1.get(key).equals(map2.get(key));
+				if (shouldAdd) {
+					result.put(key, map1.get(key));
+				}
 			}
 		}
 		return result;
@@ -30,7 +37,7 @@ public class SmartableImpl implements Smartable {
 	@Override
 	public Set<String> removeEvenLength(Set<String> set) {
 		Set<String> result = new LinkedHashSet<>();
-		for (String value: set) {
+		for (String value : set) {
 			if (value == null || value.length() % 2 != 0) {
 				result.add(value);
 			}

@@ -46,7 +46,7 @@ public class Demo {
 			Map<String, Integer> map1 = new HashMap<>();
 			map1.put("Janet", 87);
 			map1.put("Logan", 62);
-			map1.put("Whitaker", 46);
+			map1.put("Whitaker", null);
 			map1.put("Alyssa", 100);
 			map1.put("Stefanie", 80);
 			map1.put("Jeff", 88);
